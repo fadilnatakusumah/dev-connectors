@@ -1,0 +1,6 @@
+{
+    "mongo_uri": "mongodb+srv://fadil:bismillah@cluster0.kof0s.mongodb.net/dev-portfolios?retryWrites=true&w=majority",
+    "jwtSecret": "thisissecrettextthatsosecrethehe",
+    "githubClientId": "6340fccf08518ff745ed",
+    "githubSecret": "2ad02030c4db3ffcd363336ab64dec072c68596b"
+}
