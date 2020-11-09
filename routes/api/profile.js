@@ -281,12 +281,13 @@ router.delete('/experience/:exp_id', auth, async (req, res) => {
 
   try {
     // delete profile
-    const profile = await Profile.findOne({ user: req.user.id },);
-
+    const profile = await Profile.findOne({ user: req.user.id });
+    
+    console.log("req.params.exp_id", req.params.exp_id)
     const newExperiences = profile.experience
       ? profile.experience.filter(({ id }) => id !== req.params.exp_id)
       : []
-    profile.experience = newExperiences;
+    profile.experience = [...newExperiences];
 
     await profile.save();
     res.json({
@@ -421,4 +422,6 @@ router.get('/github/:username', async (req, res) => {
     })
   }
 });
+
+
 module.exports = router;

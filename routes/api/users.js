@@ -63,22 +63,16 @@ router.post('/',
         }
       }
 
+      // return jsonwebtoken
       jwt.sign(
         payload,
         config.get('jwtSecret'),
         { expiresIn: 360000 },
         (err, token) => {
           if (err) throw err;
-          return res.json({ token })
+          return res.json({ success: true, data: token })
         }
       );
-
-
-      // // return jsonwebtoken
-      // res.json({
-      //   success: true,
-      //   data: []
-      // })
     } catch (error) {
       console.error("error", error)
       res.status(500).json({
